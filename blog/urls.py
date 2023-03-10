@@ -8,4 +8,7 @@ urlpatterns = [
     #/는 다음에 /문자가 한번 더 와야한다.
     #예를들어, http://127.0.0.1:8000/post/5/ 인 경우, 장고는 post_detail 뷰를 찾아 매기변수 pk가 5인 값을 찾아 뷰로 전달
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
+    #post_new 추가
+    path('post/new/', views.post_new, name='post_new'),
+    path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
 ]
