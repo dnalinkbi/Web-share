@@ -9,3 +9,8 @@ class PostForm(forms.ModelForm):
         model = Post
         #author, created_date도 가능
         fields = ('title', 'text',)
+
+class MyModelForm(forms.ModelForm):
+    class Meta:
+        model = MyModel
+        fields = ('file_field')

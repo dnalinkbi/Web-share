@@ -53,3 +53,14 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+#파일 업로드
+def upload(request):
+    if request.method == 'POST':
+        form = MyModelForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('upload_success')
+    else:
+        form = MyModelForm()
+    return render(request, 'upload.html', {'form': form})
